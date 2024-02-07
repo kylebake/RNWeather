@@ -3,11 +3,12 @@ import { Weather, WeatherDetail } from 'types/Weather'
 // TODO: obfuscate this in an environment variable
 const OPEN_WEATHER_API_KEY = '5b448cd438e7eb1bff29cc52edb859ef'
 
-// possible to extract these out a level higher for easier view of all the endpoints
-// ie, if a member of another team is curious about what all endpoints are called by the app
 const baseWeatherUrl = 'https://api.openweathermap.org/data/2.5'
+const baseIconUrl = 'https://openweathermap.org/img/wn'
+
 const Endpoints = {
   weatherUrl: `${baseWeatherUrl}/weather`,
+  iconUrl: (icon: string) => `${baseIconUrl}/${icon}@2x.png`,
 }
 
 const buildCityWeatherUrl = (city: string) => {
@@ -23,7 +24,7 @@ const buildCityWeatherUrl = (city: string) => {
 }
 
 const buildWeatherIconUrl = (weatherDetail: WeatherDetail) =>
-  `https://openweathermap.org/img/wn/${weatherDetail.icon}@2x.png`
+  Endpoints.iconUrl(weatherDetail.icon)
 
 const getWeatherForCity = async (city: string): Promise<Weather> => {
   const url = buildCityWeatherUrl(city)
@@ -32,7 +33,7 @@ const getWeatherForCity = async (city: string): Promise<Weather> => {
     const weatherResponse = await fetch(url)
 
     if (!weatherResponse.ok)
-      throw new Error(`Get weather call failed: ${weatherResponse.statusText}`)
+      throw new Error(`Get weather call failed: ${weatherResponse.status}`)
 
     const weather: Weather = await weatherResponse.json()
 

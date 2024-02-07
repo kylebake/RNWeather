@@ -3,8 +3,8 @@ import { WeatherApi } from 'api/WeatherApi/WeatherApi'
 import { useGetWeather } from 'queries/weather/useGetWeather'
 import { ActivityIndicator, StyleSheet, View } from 'react-native'
 import { Colors } from 'resources/colors'
-import { WeatherContent } from './WeatherContent'
 import { Fonts } from 'resources/fonts'
+import { WeatherContent } from './WeatherContent'
 
 type WeatherResultProps = {
   city?: string
@@ -12,14 +12,12 @@ type WeatherResultProps = {
 
 const formatTemperature = (temperature: number) => `${temperature.toFixed(1)}\u00b0F`
 
-export const WeatherResult: React.FC<WeatherResultProps> = (
-  props: WeatherResultProps,
-) => {
+export const WeatherResult = (props: WeatherResultProps) => {
   const { city } = props
   const { data: weather, isError, isPending, error } = useGetWeather(city)
 
-  if (isPending) return <ActivityIndicator size="large" />
-
+  if (!city) return null
+  if (isPending) return <ActivityIndicator size="large" color={Colors.blue} />
   if (isError) return <Text style={styles.errorText}>{error.message}</Text>
 
   const weatherConditions = weather.weather[0]

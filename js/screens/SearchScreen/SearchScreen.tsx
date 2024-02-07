@@ -1,7 +1,7 @@
 import { Button, Input } from '@rneui/themed'
-import { WeatherResult } from 'components/WeatherResult'
 import React, { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
+import { WeatherResult } from './components/WeatherResult'
 
 export const SearchScreen = () => {
   const [city, setCity] = useState<string | undefined>(undefined)
@@ -13,12 +13,8 @@ export const SearchScreen = () => {
         <Input
           placeholder="City"
           value={city}
-          onChangeText={text => {
-            setCity(text)
-          }}
-          containerStyle={{
-            flex: 1,
-          }}
+          onChangeText={setCity}
+          containerStyle={styles.searchInputContainer}
         />
         <Button title="Search" onPress={() => setSearchCity(city)} />
       </View>
@@ -32,5 +28,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 10,
+  },
+  searchInputContainer: {
+    flex: 1,
   },
 })
