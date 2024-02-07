@@ -18,7 +18,11 @@ export const SearchScreen = () => {
           onChangeText={setCity}
           containerStyle={styles.searchInputContainer}
         />
-        <Button title="Search" onPress={() => setSearchCity(city)} />
+        <Button
+          title="Search"
+          accessibilityLabel="search-button"
+          onPress={() => setSearchCity(city)}
+        />
       </View>
       <WeatherResult city={searchCity} />
     </View>

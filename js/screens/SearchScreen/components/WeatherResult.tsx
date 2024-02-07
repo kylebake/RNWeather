@@ -38,7 +38,7 @@ export const WeatherResult = (props: WeatherResultProps) => {
   const iconUrl = WeatherApi.buildWeatherIconUrl(weatherConditions)
 
   return (
-    <View>
+    <View accessibilityLabel="weather-results">
       <View style={styles.weatherConditionsContainer}>
         <Text style={styles.cityNameText}>{weather.name}</Text>
         <Image
