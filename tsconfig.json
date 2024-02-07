@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES5",
+    "module": "CommonJS",
+    "noImplicitAny": false,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./js"
+  },
+  "include": [
+    "App.tsx",
+    "js"
+  ],
+  "extends": "expo/tsconfig.base"
+}
