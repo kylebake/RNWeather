@@ -1,0 +1,20 @@
+{
+    "extends": "../tsconfig",
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "module": "es2020",
+        "baseUrl": "../js/",
+        "types": [
+            "jest",
+            "node",
+            "@testing-library/react-native/extend-expect"
+        ]
+    },
+    "include": [
+        "*.ts",
+        "*.tsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "../js/"
+    ]
+}

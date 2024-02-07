@@ -1,11 +1,13 @@
 import { Button, Input } from '@rneui/themed'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { WeatherResult } from './components/WeatherResult'
 
 export const SearchScreen = () => {
   const [city, setCity] = useState<string | undefined>(undefined)
-  const [searchCity, setSearchCity] = useState<string | undefined>(undefined)
+  const [searchCity, setSearchCity] = useState<string | undefined>(
+    undefined,
+  )
 
   return (
     <View>

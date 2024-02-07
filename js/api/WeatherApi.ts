@@ -1,7 +1,7 @@
 import { Weather, WeatherDetail } from 'types/Weather'
 
 // TODO: obfuscate this in an environment variable
-const OPEN_WEATHER_API_KEY = '5b448cd438e7eb1bff29cc52edb859ef'
+export const OPEN_WEATHER_API_KEY = '5b448cd438e7eb1bff29cc52edb859ef'
 
 const baseWeatherUrl = 'https://api.openweathermap.org/data/2.5'
 const baseIconUrl = 'https://openweathermap.org/img/wn'

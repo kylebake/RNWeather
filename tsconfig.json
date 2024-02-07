@@ -5,7 +5,8 @@
     "module": "CommonJS",
     "noImplicitAny": false,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./js"
+    "baseUrl": "./js",
+    "jsx": "react-jsx"
   },
   "include": [
     "App.tsx",
