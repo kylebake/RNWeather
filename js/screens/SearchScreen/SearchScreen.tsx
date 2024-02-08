@@ -1,8 +1,9 @@
-import { SearchBar } from '@rneui/themed'
+import { SearchBar, Text } from '@rneui/themed'
 import { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Colors } from 'resources/colors'
+import { Fonts } from 'resources/fonts'
 import { WeatherResult } from './components/WeatherResult'
 
 export const SearchScreen = () => {
@@ -13,6 +14,7 @@ export const SearchScreen = () => {
 
   return (
     <SafeAreaView style={styles.mainContainer}>
+      <Text style={styles.titleText}>Weather by City</Text>
       <View style={styles.searchContainer}>
         <SearchBar
           placeholder="City"
@@ -32,6 +34,11 @@ export const SearchScreen = () => {
 }
 
 const styles = StyleSheet.create({
+  titleText: {
+    paddingTop: 20,
+    fontSize: Fonts.size24,
+    textAlign: 'center',
+  },
   mainContainer: {
     flex: 1,
   },
