@@ -29,10 +29,7 @@ describe('screens/SearchScreen/SearchScreen', () => {
     const user = userEvent.setup()
 
     const input = screen.getByPlaceholderText('City')
-    await user.type(input, 'Columbus')
-
-    const searchButton = screen.getByLabelText('search-button')
-    await user.press(searchButton)
+    await user.type(input, 'Columbus', { submitEditing: true })
 
     expect(screen.getByLabelText('weather-results')).toBeOnTheScreen()
   })
