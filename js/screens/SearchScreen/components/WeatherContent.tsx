@@ -1,5 +1,5 @@
-import { StyleSheet, View } from 'react-native'
 import { Text } from '@rneui/themed'
+import { StyleSheet, View } from 'react-native'
 import { Fonts } from 'resources/fonts'
 
 type WeatherContentProps = {

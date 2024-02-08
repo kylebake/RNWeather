@@ -1,5 +1,6 @@
 import { Image, Text } from '@rneui/themed'
 import { WeatherApi } from 'api/WeatherApi'
+import { VerticalDivider } from 'components/VerticalDivider'
 import { useGetWeather } from 'queries/weather/useGetWeather'
 import { ActivityIndicator, StyleSheet, View } from 'react-native'
 import { Colors } from 'resources/colors'
@@ -58,10 +59,12 @@ export const WeatherResult = (props: WeatherResultProps) => {
           labelText="Temperature"
           weatherValue={formatTemperature(weather.main.temp)}
         />
+        <VerticalDivider />
         <WeatherContent
           labelText="Feels like"
           weatherValue={formatTemperature(weather.main.feels_like)}
         />
+        <VerticalDivider />
         <WeatherContent
           labelText="Humidity"
           weatherValue={`${weather.main.humidity}%`}
